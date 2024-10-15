@@ -1,0 +1,15 @@
+services:
+  web:
+    build: 
+      context: ./prodap
+      dockerfile: Dockerfile
+    volumes:
+      - ./prodap:/gesist
+    ports:
+      - 8001:8001
+    networks:
+      - PRODAP
+
+networks:
+  PRODAP:
+    driver: bridge
